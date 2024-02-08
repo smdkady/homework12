@@ -36,7 +36,7 @@ class PosterManagerTest {
 
     @Test
     public void testFindLast() {
-        PosterManager manager = new PosterManager(5);
+        PosterManager manager = new PosterManager();
         manager.add("Movie1");
         manager.add("Movie2");
         manager.add("Movie3");
@@ -49,7 +49,7 @@ class PosterManagerTest {
 
     @Test
     public void testFindLastLower() {
-        PosterManager manager = new PosterManager(5);
+        PosterManager manager = new PosterManager();
         manager.add("Movie1");
         manager.add("Movie2");
         manager.add("Movie3");
@@ -63,7 +63,7 @@ class PosterManagerTest {
 
     @Test
     public void testFindLastHigher() {
-        PosterManager manager = new PosterManager(6);
+        PosterManager manager = new PosterManager();
         manager.add("Movie1");
         manager.add("Movie2");
         manager.add("Movie3");
@@ -72,8 +72,9 @@ class PosterManagerTest {
         manager.add("Movie6");
 
         String[] actual = manager.findLast();
-        String[] expected = {"Movie6", "Movie5", "Movie4", "Movie3", "Movie2", "Movie1"};
+        String[] expected = {"Movie6", "Movie5", "Movie4", "Movie3", "Movie2"};
         Assertions.assertArrayEquals(expected, actual);
     }
+
 
 }
